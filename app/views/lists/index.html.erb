@@ -1,0 +1,19 @@
+<div class="banner" style="background-image: url('https://collider.com/wp-content/uploads/drive-movie-banner-bryan-cranston.jpg')">
+</div>
+<%= link_to "Create a watchlist", new_list_path, class:"btn mt-3" %>
+<br>
+<br>
+<div class="container d-flex">
+  <div class="row p-2">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list) do %>
+      <div class="card-product col-sm width: 18rem;">
+        <%= image_tag list.photo %>
+          <div class="card-product-infos">
+            <h2><%= list.name %></h2>
+          </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
