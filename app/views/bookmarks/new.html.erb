@@ -1,0 +1,7 @@
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
+  <%= f.association :movie, prompt: "Select a movie" %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to "Back to list", list_path(@list), class:"btn btn-dark" %>
