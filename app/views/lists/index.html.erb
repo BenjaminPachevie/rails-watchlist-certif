@@ -1,17 +1,14 @@
-<div class="banner" style="background-image: url('https://collider.com/wp-content/uploads/drive-movie-banner-bryan-cranston.jpg')">
+<div class="banner" style="background-image: url('https://images.assetsdelivery.com/compings_v2/paseven/paseven1812/paseven181200012.jpg')">
 </div>
 <%= link_to "Create a watchlist", new_list_path, class:"btn mt-3" %>
 <br>
 <br>
-<div class="container d-flex">
-  <div class="row p-2">
+<div class="container">
+  <div class="d-flex">
     <% @lists.each do |list| %>
       <%= link_to list_path(list) do %>
-      <div class="card-product col-sm width: 18rem;">
-        <%= image_tag list.photo %>
-          <div class="card-product-infos">
-            <h2><%= list.name %></h2>
-          </div>
+      <div class="card-category col-sm p-3 mx-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= rails_blob_url(list.photo) %>'); height: 100px; background-position: center;">
+        <%= list.name %>
       </div>
       <% end %>
     <% end %>

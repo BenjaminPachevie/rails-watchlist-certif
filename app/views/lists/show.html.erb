@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: image_tag <%= @list.photo %>">
+<div class="banner" style="background-image: url('<%= rails_blob_url(@list.photo) %>'); height: 100px; background-position: center;">
 </div>
 
 <%= link_to "Add a movie", new_list_bookmark_path(@list), class:"btn mt-3" %>
@@ -9,7 +9,7 @@
       <li>
         <%= bookmark.movie.title %>
         <%= bookmark.movie.overview %>
-        <%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        <%= link_to "delete", bookmark_path(bookmark), :class => "text-decoration-none text-danger",  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
       </li>
     <% end %>
 </ul>
