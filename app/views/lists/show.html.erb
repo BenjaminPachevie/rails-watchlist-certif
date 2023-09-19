@@ -2,14 +2,14 @@
 <h1><%= @list.name.upcase %></h1>
 </div>
 
-<%= link_to "🢪 Back to lists", lists_path, class:"btn mt-3" %>
-<%= link_to "Add a movie", new_list_bookmark_path(@list), class:"btn mt-3" %>
+<%= link_to "🢪 Back to lists", lists_path, class:"btn mt-4 pt-2 pb-2" %>
+<%= link_to "Add a movie", new_list_bookmark_path(@list), class:"btn mt-4 pt-2" %>
 <br>
 <div class="container">
   <div class="d-flex align-items-center justify-content-between mb-3">
     <div class="row">
       <% @bookmarks.each do |bookmark| %>
-        <div class="card d-flex co-12 col-sm6 col-md-4 mb-5">
+        <div class="card d-flex co-12 col-sm6 col-md-4 mb-4">
           <%= image_tag bookmark.movie.poster_url %>
           <div class="card-infos col-sm p-3 mx-2 d-flex flex-column">
             <span><strong><%= bookmark.movie.title %></strong> <span class="text-muted font-weight-normal">• <%= bookmark.movie.rating %> <i class="fa-solid fa-star" style="color: #e5d257;"></i></span></span>
