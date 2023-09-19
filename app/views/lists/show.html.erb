@@ -13,10 +13,10 @@
           <%= image_tag bookmark.movie.poster_url %>
           <div class="card-infos col-sm p-3 mx-2 d-flex flex-column">
             <span><strong><%= bookmark.movie.title %></strong> <span class="text-muted font-weight-normal">• <%= bookmark.movie.rating %> <i class="fa-solid fa-star" style="color: #e5d257;"></i></span></span>
-            <span class="movie-overview"><%= bookmark.movie.overview.split.first(30).join(" ")%>...</span>
+            <span class="movie-overview"><%= bookmark.movie.overview %></span>
             <div class="d-flex align-items-end justify-content-between pt-2">
               <div class="bookmark-comment">
-                <i class="fa-solid fa-quote-left" style="color: #0A0F25;">&nbsp;</i><%= bookmark.comment %>
+                <i class="fa-solid fa-quote-left" style="color: #0A0F25;">&nbsp;</i><%= bookmark.comment %>&nbsp;<i class="fa-solid fa-quote-right" style="color: #0A0F25;"></i>
               </div>
               <%= link_to "delete", bookmark_path(bookmark), :class => "delete-movie", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
             </div>
