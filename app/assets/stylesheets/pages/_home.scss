@@ -103,8 +103,8 @@ h1 {
   text-align: justify;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
-  line-clamp: 5;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
   }
 
@@ -118,12 +118,4 @@ h1 {
   color: red;
   font-weight: bold;
   font-size: 12px;
-}
-
-.card-text {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  line-clamp: 5;
-  -webkit-box-orient: vertical;
 }
