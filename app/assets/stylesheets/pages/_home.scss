@@ -45,15 +45,23 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+
+  .element {
+    position: absolute;
+    top: -5px;
+    right: 9px;
+  }
 }
 
 a {
     text-decoration: none !important;
+    color: white;
 }
 
 .card {
@@ -115,7 +123,7 @@ h1 {
 
 .delete-movie {
   text-decoration: none;
-  color: red;
+  color: white;
   font-weight: bold;
   font-size: 12px;
 }

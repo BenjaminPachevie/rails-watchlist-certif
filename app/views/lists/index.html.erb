@@ -12,6 +12,9 @@
         <%= link_to list_path(list) do %>
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= rails_blob_url(list.photo) %>'); height: 100px; background-position: center;">
           <%= list.name %>
+            <div class="element">
+              <%= link_to "X", list_path(list), :class => "delete-movie", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?"} %>
+            </div>
           </div>
         <% end %>
       </div>
