@@ -1,4 +1,5 @@
 <div class="banner" style="background-image: url('<%= rails_blob_url(@list.photo) %>'); height: 246px; background-position: center;">
+<h1><%= @list.name %></h1>
 </div>
 
 <%= link_to "Add a movie", new_list_bookmark_path(@list), class:"btn mt-3" %>

@@ -1,7 +1,11 @@
-<%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
-<br>
-<%= link_to "Back to home", lists_path, class:"btn btn-dark" %>
+<div class="banner" style="background-image: url(<%= asset_path 'banner.png' %>)">
+<h1>ADD A LIST</h1>
+</div>
+<div class="container pt-4 justify-content-around">
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name, placeholder: "Name" %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit class:"btn btn-dark"%>
+    <%= link_to "Back to home", lists_path, class:"btn btn-dark" %>
+  <% end %>
+</div>

@@ -1,7 +1,12 @@
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
-  <%= f.association :movie, prompt: "Select a movie" %>
-  <%= f.button :submit %>
-<% end %>
-
-<%= link_to "Back to list", list_path(@list), class:"btn btn-dark" %>
+<div class="banner" style="background-image: url('<%= rails_blob_url(@list.photo) %>'); height: 246px; background-position: center;">
+</div>
+<div class="container">
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
+    <br>
+    <%= f.association :movie, prompt: "Select a movie" %>
+    <br>
+    <%= f.button :submit, class:"btn btn-dark"%>
+    <%= link_to "Back to home", lists_path, class:"btn btn-dark" %>
+  <% end %>
+</div>

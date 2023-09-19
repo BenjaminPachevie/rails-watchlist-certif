@@ -1,16 +1,21 @@
-<div class="banner" style="background-image: url('https://static1.moviewebimages.com/wordpress/wp-content/uploads/2022/09/a24-logo-print.jpg')">
+<div class="banner" style="background-image: url(<%= asset_path 'banner.png' %>); background-position: center;">
+<h1>WATCHLIST</h1>
 </div>
 <%= link_to "Create a list", new_list_path, class:"btn mt-3" %>
 <br>
 <br>
 <div class="container">
-  <div class="d-flex">
-    <% @lists.each do |list| %>
-      <%= link_to list_path(list) do %>
-      <div class="card-category col-sm p-3 mx-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= rails_blob_url(list.photo) %>'); height: 100px; background-position: center;">
-        <%= list.name %>
-      </div>
+  <div class="row">
+    <div class>
+      <% @lists.each do |list| %>
+        <%= link_to list_path(list) do %>
+          <div class="col-sm">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= rails_blob_url(list.photo) %>'); height: 100px; background-position: center;">
+            <%= list.name %>
+            </div>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
