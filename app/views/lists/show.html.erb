@@ -6,15 +6,20 @@
 <%= link_to "Back to lists", lists_path, class:"btn mt-3" %>
 <br>
 <div class="container">
-  <% @bookmarks.each do |bookmark| %>
-    <div class="card d-flex">
-      <%= image_tag bookmark.movie.poster_url %>
-      <div class="card-infos col-sm p-3 mx-3">
-        <%= bookmark.movie.title %>
-        <%= bookmark.movie.overview.first(200)%>...
-        <%= bookmark.movie.rating %>
-        <%= link_to "delete", bookmark_path(bookmark), :class => "text-decoration-none text-danger",  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <div class="row">
+      <% @bookmarks.each do |bookmark| %>
+        <div class="card co-12 col-sm6 col-md-4 mb-5">
+          <%= image_tag bookmark.movie.poster_url %>
+          <div class="card-infos col-sm p-3 mx-3">
+            <%= bookmark.movie.title %>
+            <%= bookmark.movie.overview.first(200)%>...
+            <%= bookmark.movie.rating %>
+            <%= link_to "delete", bookmark_path(bookmark), :class => "text-decoration-none text-danger",  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          </div>
+        </div>
+      <% end %>
       </div>
     </div>
-  <% end %>
+  </div>
 </div>

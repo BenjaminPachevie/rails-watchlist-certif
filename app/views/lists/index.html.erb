@@ -5,16 +5,16 @@
 <br>
 <br>
 <div class="container">
-  <div class="row">
-    <div class>
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <div class="row">
       <% @lists.each do |list| %>
+      <div class="co-12 col-sm6 col-md-4 mb-5">
         <%= link_to list_path(list) do %>
-          <div class="col-sm">
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= rails_blob_url(list.photo) %>'); height: 100px; background-position: center;">
-            <%= list.name %>
-            </div>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= rails_blob_url(list.photo) %>'); height: 100px; background-position: center;">
+          <%= list.name %>
           </div>
         <% end %>
+      </div>
       <% end %>
     </div>
   </div>
