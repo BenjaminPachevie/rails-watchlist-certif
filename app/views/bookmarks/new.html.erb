@@ -5,7 +5,7 @@
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
     <%= f.association :movie, prompt: "Select a movie" %>
-    <%= f.button :submit, class:"btn btn-dark"%>
     <%= link_to "🢪 Back home", lists_path, class:"btn btn-dark" %>
+    <%= f.button :submit, class:"btn btn-dark"%>
   <% end %>
 </div>
