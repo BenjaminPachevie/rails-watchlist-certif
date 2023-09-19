@@ -1,5 +1,5 @@
 <div class="banner" style="background-image: url('<%= rails_blob_url(@list.photo) %>'); height: 246px; background-position: center;">
-<h1><%= @list.name %></h1>
+<h1><%= @list.name.upcase %></h1>
 </div>
 
 <%= link_to "Add a movie", new_list_bookmark_path(@list), class:"btn mt-3" %>
@@ -9,13 +9,17 @@
   <div class="d-flex align-items-center justify-content-between mb-3">
     <div class="row">
       <% @bookmarks.each do |bookmark| %>
-        <div class="card co-12 col-sm6 col-md-4 mb-5">
+        <div class="card d-flex co-12 col-sm6 col-md-4 mb-5">
           <%= image_tag bookmark.movie.poster_url %>
-          <div class="card-infos col-sm p-3 mx-3">
-            <%= bookmark.movie.title %>
-            <%= bookmark.movie.overview.first(200)%>...
-            <%= bookmark.movie.rating %>
-            <%= link_to "delete", bookmark_path(bookmark), :class => "text-decoration-none text-danger",  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          <div class="card-infos col-sm p-3 mx-2 d-flex flex-column">
+            <span><strong><%= bookmark.movie.title %></strong> <span class="text-muted font-weight-normal">• <%= bookmark.movie.rating %> <i class="fa-solid fa-star" style="color: #e5d257;"></i></span></span>
+            <span class="movie-overview"><%= bookmark.movie.overview.split.first(30).join(" ")%>...</span>
+            <div class="d-flex align-items-end justify-content-between pt-2">
+              <div class="bookmark-comment">
+                <i class="fa-solid fa-quote-left" style="color: #0A0F25;">&nbsp;</i><%= bookmark.comment %>
+              </div>
+              <%= link_to "delete", bookmark_path(bookmark), :class => "delete-movie", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+            </div>
           </div>
         </div>
       <% end %>
@@ -23,3 +27,5 @@
     </div>
   </div>
 </div>
+
+<%# <%= link_to "delete", bookmark_path(bookmark), :class => "text-decoration-none text-danger fw-bold fs-6",  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
