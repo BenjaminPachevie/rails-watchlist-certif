@@ -86,11 +86,6 @@ a {
   display: flex;
   justify-content: space-between;
   position: relative;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
-  -webkit-box-orient: vertical;
 }
 
 .container {
@@ -122,6 +117,13 @@ h1 {
 }
 
 .delete-movie {
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.delete-list {
   text-decoration: none;
   color: white;
   font-weight: bold;
