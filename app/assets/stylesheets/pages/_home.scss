@@ -6,8 +6,8 @@ body {
 
 .banner {
   background-size: cover;
-  background-position: 100%;
-  width: auto;
+  background-position: center;
+  width: 100%;
   height: 246px;
   display: flex;
   justify-content: center;
@@ -128,4 +128,18 @@ h1 {
   color: white;
   font-weight: bold;
   font-size: 12px;
+}
+
+.movie-tag {
+  color: white;
+  border-radius: 4px;
+  background: #fcbf49;
+  position: absolute;
+  top: 5rem;
+  right: 1rem;
+  padding: 2px 8px;
+  margin: 10px;
+  border-radius: 10px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
 }
